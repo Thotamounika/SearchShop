@@ -1,0 +1,56 @@
+<html>
+<head>
+<link rel="icon" href="pencil.png" type="image/gif" sizes="24x24"> 
+<link rel="stylesheet" type="text/css" href="click2.css">
+<title>
+Add new Shop
+</title>
+<style>
+body{
+    background-image: url("book.jpg");}
+pre{font-family:Constantia;font-size:150%;}
+</style>
+<script type="text/javascript">
+    function Validate() {
+        var password = document.getElementById("txtPassword").value;
+        var confirmPassword = document.getElementById("txtConfirmPassword").value;
+        if (password != confirmPassword) {
+            alert("Passwords do not match.");
+ document.getElementById('txtConfirmPassword').value = "";
+            return false;}return true
+		
+}
+		
+</script>
+<script type="text/javascript">
+    var apiUrl = 'http://localhost:8081/shop';
+    fetch(apiUrl).then(response => {
+      return response.json();
+    }).then(data => {
+      // Work with JSON data here
+      console.log(data);
+    }).catch(err => {
+      // Do something for an error here
+    });
+</script>
+</head>
+<body>
+<h1>Shop Registration form</h1>
+<hr>
+<i>Please fill all the details.</i>
+<pre><form name="f1" method="post" action="sdatabase_register">
+        	Shopname                            <input type="text" name="shopname" maxlength="16" pattern="[A-Za-z0-9]{1,}" autocomplete="off" title="user name should be of max 16 characters with alphanumeric values" required><br>
+        		
+		Select Category 	              <select name="category" required>
+     <option value=""></option>
+    <option value="generalstore">General store</option>
+    <option value="mall">Mall</option>
+    <option value="supermarket">Supermarket</option>
+    <option value="medicalstore">MedicalStore</option>
+  </select><br>
+		Owner Name                       <input type="text" name="name" maxlength="25" required><br>
+	<input id="sub" type="submit" value="SUBMIT"size="30" onclick="Validate()">                                            <input id="sub" type="reset" value="RESET" size="30">
+</form>
+</pre>
+</body>
+</html>

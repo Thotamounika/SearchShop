@@ -1,0 +1,66 @@
+input#sub{
+    position: relative;
+    background-color: #696969;
+    border:none;
+    font-size: 20px;
+    color:white;
+    padding: 10px;
+    width:150px;
+    text-align: center;
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+border-radius: 8px;
+    
+}
+input#sub:hover {background-color:transparent;color: #696969 }
+div.container {
+    width: 100%;
+border: 1px solid gray;
+   
+}
+
+header{
+    padding: 1em;
+    color: white;
+    background-color: black;
+    clear: left;
+    text-align: center;
+}
+
+nav {
+    float: left;
+    max-width: 160px;
+    margin: 0;
+    padding: 1em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+   
+nav ul a {
+color:#666666;
+    text-decoration: none;
+}
+
+article {
+    margin-left: 170px;
+    border-left: 1px solid gray;
+    padding: 1em;
+    overflow: hidden;
+}
+.home{
+background: transparent;
+    border: none;
+    display: inline-block;
+    cursor: pointer;
+    float: right;
+}
+.home:hover {
+    background-color:#333;
+opacity: 0.6;
+    filter: alpha(opacity=60);
+}
