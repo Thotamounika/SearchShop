@@ -24,7 +24,7 @@ public class ShopController {
     }
     @CrossOrigin(origins = "http://localhost:9000")
     @GetMapping(value="/getShop/{shopName}")
-    public Shop getShopRepo(@PathVariable String shopName) {
+    public List<Shop> getShopRepo(@PathVariable String shopName) {
         return shopRepo.findDistinctShopByShopName(shopName);
     }
 

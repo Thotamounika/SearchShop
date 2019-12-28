@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface ShopRepo extends JpaRepository<Shop, Long> {
 
-    Shop findDistinctShopByShopName(String shopName);
+    List<Shop> findDistinctShopByShopName(String shopName);
 }
