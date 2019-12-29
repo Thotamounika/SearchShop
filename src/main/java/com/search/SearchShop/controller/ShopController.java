@@ -17,12 +17,22 @@ public class ShopController {
 
     @Autowired
     private ShopRepo shopRepo;
-    @CrossOrigin(origins = "http://localhost:9000")
+
+    @GetMapping(value="/staticpoint")
+    public Shop staticShop(){
+        Shop s=new Shop();
+        s.setOwnerName("Candace");
+        s.setCategory("SuperMarket");
+        s.setShopName("Static Shop");
+        return s;
+    }
+
+   // @CrossOrigin(origins = "http://localhost:9000")
 @GetMapping
     public List<Shop> findAll(){
         return shopRepo.findAll();
     }
-    @CrossOrigin(origins = "http://localhost:9000")
+    //@CrossOrigin(origins = "http://localhost:9000")
     @GetMapping(value="/getShop/{shopName}")
     public List<Shop> getShopRepo(@PathVariable String shopName) {
         return shopRepo.findDistinctShopByShopName(shopName);

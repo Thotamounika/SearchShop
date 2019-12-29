@@ -12,16 +12,16 @@ public class Shop {
     String shopName;
     String category;
     //Location location;
-    String OwnerName;
+    String ownerName;
 
     public Shop() {
     }
 
-    public Shop(long id, String shopName, String category, String ownerName) {
+    public Shop(long id, @NotBlank String shopName, String category, String ownerName) {
         this.id = id;
         this.shopName = shopName;
         this.category = category;
-        OwnerName = ownerName;
+        this.ownerName = ownerName;
     }
 
     @Id
@@ -51,10 +51,10 @@ public class Shop {
     }
 
     public String getOwnerName() {
-        return OwnerName;
+        return ownerName;
     }
 
     public void setOwnerName(String ownerName) {
-        OwnerName = ownerName;
+        this.ownerName = ownerName;
     }
 }

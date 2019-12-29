@@ -32,13 +32,32 @@ pre{font-family:Constantia;font-size:150%;}
     }).catch(err => {
       // Do something for an error here
     });
+
+    fetch('http://localhost:8081/shop', {
+  method: "POST",
+  headers: {
+    Accept: "application/json",
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    shopName: "shopname",
+    category: "category",
+    ownerName: "name"
+  })
+});
+
+
+
+
+
+
 </script>
 </head>
 <body>
 <h1>Shop Registration form</h1>
 <hr>
 <i>Please fill all the details.</i>
-<pre><form name="f1" method="post" action="sdatabase_register">
+<pre>
         	Shopname                            <input type="text" name="shopname" maxlength="16" pattern="[A-Za-z0-9]{1,}" autocomplete="off" title="user name should be of max 16 characters with alphanumeric values" required><br>
         		
 		Select Category 	              <select name="category" required>
@@ -49,8 +68,8 @@ pre{font-family:Constantia;font-size:150%;}
     <option value="medicalstore">MedicalStore</option>
   </select><br>
 		Owner Name                       <input type="text" name="name" maxlength="25" required><br>
-	<input id="sub" type="submit" value="SUBMIT"size="30" onclick="Validate()">                                            <input id="sub" type="reset" value="RESET" size="30">
-</form>
+    <button  onclick="saveShop()"> Save Shop </button>
+
 </pre>
 </body>
 </html>
